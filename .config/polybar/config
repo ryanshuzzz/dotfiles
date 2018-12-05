@@ -24,8 +24,8 @@ font-1 = "Font Awesome 5 Free:style=Solid:size=10;1"
 font-2 = "Font Awesome 5 Brands:size=10;1"
 
 modules-left = i3 mpd
-modules-center = date
-modules-right = volume battery wlan eth powermenu
+modules-center = 
+modules-right = date volume wlan battery eth powermenu
 
 tray-position =
 ;tray-padding =
@@ -64,15 +64,15 @@ label-urgent-padding = 2
 
 [module/wlan]
 type = internal/network
-interface = lo
+interface = wlp4s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-foreground = #80969b
-format-connected-background = #1e1e20
+format-connected-background = #416269
 format-connected-padding = 2
 label-connected = %essid%
-
+format-background = #416269
 format-disconnected =
 
 ramp-signal-0 = 
@@ -98,13 +98,13 @@ format-disconnected =
 
 [module/date]
 type = internal/date
-interval = 5
+interval = 1
 
-date =
-date-alt = " %Y-%m-%d"
+date =" %Y-%m-%d"
+date-alt = 
 
-time = %H:%M
-time-alt = %H:%M:%S
+time = %H:%M:%S
+time-alt = 
 
 format-prefix = 
 format-foreground = #1e1e20
@@ -203,30 +203,3 @@ ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
 
-
-[module/mpd]
-type = internal/mpd
-format-online = <icon-prev> <icon-stop> <toggle> <icon-next>  <icon-repeat> <icon-random>  <bar-progress> <label-time>  <label-song>
-
-icon-play = 
-icon-pause = 
-icon-stop = 
-icon-prev = 
-icon-next = 
-icon-random = 
-icon-repeat = 
-
-toggle-on-foreground =
-toggle-off-foreground = #55
-
-bar-progress-width = 45
-bar-progress-format = %{A4:mpdseek+2: A5:mpdseek-2:}%fill%%indicator%%empty%%{A A}
-bar-progress-indicator = |
-bar-progress-indicator-foreground = #ff
-bar-progress-indicator-font = 3
-bar-progress-fill = ─
-bar-progress-fill-foreground = #bb
-bar-progress-fill-font = 3
-bar-progress-empty = ─
-bar-progress-empty-font = 3
-bar-progress-empty-foreground = #44
